@@ -15,13 +15,14 @@ module.exports = function (app, passport, auth) {
   
   app.param('userId', users.user)
 
-  var leagues = require('../app/controllers/leagues');
+  var leagues = require('../app/controllers/leagues')  
   app.get('/leagues', leagues.all)
-  app.post('/leagues', auth.requiresLogin, leagues.create);
-  app.get('leagues/:leagueId', leagues.show);
-  //The methods following the route string are chained and invoked serially
-  app.put('/leagues/:leagueId', auth.requiresLogin, leagues.update);
-  app.del('/leagues/:leagueId', auth.requiresLogin, leagues.destroy);
+  app.post('/leagues', auth.requiresLogin, leagues.create)
+  app.get('/leagues/:leagueId', leagues.show)
+  app.put('/leagues/:leagueId', auth.requiresLogin, leagues.update)
+  app.del('/leagues/:leagueId', auth.requiresLogin, leagues.destroy)
+ 
+  app.param('leagueId', leagues.league)
 
 //This makes it possible for the league controller routes to access
 //the league object directly from the request object with req.league

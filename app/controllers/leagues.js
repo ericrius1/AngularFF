@@ -17,15 +17,14 @@ exports.show = function(req, res) {
 
 //takes a league id, finds the league, 
 //and assigns it to the request object
-exports.league = function(req, res, next, id) {
-  var Leageue = mongoose.model('League');
-
-  League.load(id, function(err, league) {
-    if (err) return next(err);
-    if (!league) return next(new Error('failed to load league' + id));
-    req.league = league;
-    next();
-  });
+exports.league = function(req, res, next, id){
+  var League = mongoose.model('League')
+  League.load(id, function (err, league) {
+    if (err) return next(err)
+    if (!league) return next(new Error('Failed to load league ' + id))
+    req.league = league
+    next()
+  })
 }
 
 exports.all = function(req, res) {

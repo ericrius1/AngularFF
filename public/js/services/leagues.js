@@ -3,7 +3,7 @@ window.angular.module('ngff.services.leagues', [])
     function($resource){
       return $resource(
         //Set the parameterized resource url
-          'leagues/:leaguesId',
+          'leagues/:leagueId',
           {
             //@ parameter in paramsDefault attempts to 
             //extract a leagueId from the resource object provided to it

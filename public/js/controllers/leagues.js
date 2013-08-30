@@ -29,7 +29,7 @@ window.angular.module('ngff.controllers.leagues', [])
         }, function(league) {
           $scope.league = league;
         });
-      }
+      };
 
       $scope.update = function() {
         var league = $scope.league;
@@ -45,7 +45,5 @@ window.angular.module('ngff.controllers.leagues', [])
             $scope.leagues.splice(i, 1);
           }
         }
-      }
-
-
+      };
     }])
