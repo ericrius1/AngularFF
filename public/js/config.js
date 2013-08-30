@@ -1,8 +1,37 @@
 //Setting up route
+//config is the factory- the routeProvider is configured to create a 
+//route object
 window.app.config(['$routeProvider', function($routeProvider) {
-	$routeProvider
-	.when('/', { templateUrl: 'views/index.html' })
-	.otherwise({redirectTo: '/'});
+  $routeProvider
+  .when('/', 
+  { 
+    templateUrl: 'views/index.html' 
+  })
+  .when('/nflteams',
+  {
+    templateUrl: "views/nfl/list.html"
+  })
+  .when('/nflteams/:nflTeamId',
+  {
+    templateUrl: "views/nfl/view.html"
+  })
+  .when('leagues',
+  {
+    templateURL: 'views/leagues.list.html'
+  })
+  .when('leagues/create',
+  {
+    templateUrl: 'views/leagues/create.html'
+  })
+  .when('/leagues/edit',
+  {
+    templateUrl: 'views/leagues/edit.html'
+  })
+  .when('leagues/"leageId',
+  {
+    templateUrl: 'views/leagues/view.html'
+  })
+  .otherwise({redirectTo: '/'});
 }]);
 
 //Removing tomcat unspported headers
