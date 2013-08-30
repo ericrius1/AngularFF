@@ -1,6 +1,6 @@
 window.angular.module('ngff.controllers.leagues', [])
-  .controller('LeaguesController', ['$scope', '$routeParams', 'Global', 'Leagues'],
-    function($scope, $routeParams, Global, Leagues) {
+  .controller('LeaguesController', ['$scope', '$routeParams', '$location', 'Global', 'Leagues',
+    function ($scope, $routeParams, $location, Global, Leagues) {
       $scope.Global = Global;
 
       $scope.create = function() {
@@ -48,4 +48,4 @@ window.angular.module('ngff.controllers.leagues', [])
       }
 
 
-    })
+    }])

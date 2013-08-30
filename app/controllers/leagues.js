@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 
 
   exports.create = function(req, res) {
-    var league = new Legue(req.body);
+    var league = new League(req.body);
     league.commissioner = req.user; //express packages user object into the request as req.user
     league.save(); //Saves to database
     res.jsonp(league); //Returns league object as request response

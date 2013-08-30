@@ -3,4 +3,19 @@ window.angular.module('ngff.controllers.header', [])
     function($scope, Global) {
       $scope.global = Global;
 
-    }]);
+      $scope.navbarEntries = [{
+        "title": "Leagues",
+        "link": "leagues"
+      }, {
+        "title": "Fantasy Teams",
+        "link": "fantasyteams"
+      }, {
+        "title": "NFL Teams",
+        "link": "nflteams"
+      }, {
+        "title": "Players",
+        "link": "players"
+      }];
+
+    }
+  ]);
